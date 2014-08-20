@@ -17,7 +17,7 @@ namespace sfml_ui.Tests
 
 		public void Run()
 		{
-			window = new RenderWindow(new VideoMode(800, 600), "sfml-ui Examples", Styles.Default);
+			window = new RenderWindow(new VideoMode(800, 480), "sfml-ui Examples", Styles.Default);
 			window.Closed += window_OnCloseRequest;
 			window.Resized += window_Resized;
 
@@ -26,10 +26,9 @@ namespace sfml_ui.Tests
 
 			scene1 = new Scene(ScrollInputs.None);
 			scene1.Size = new Vector2f(window.Size.X, window.Size.Y);
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 50) { Size = new Vector2f(800, 100), Color = Color.White, Text = "Hello There.", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top, BackgroundColor = Colors.SteelBlue });
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 30) { Size = new Vector2f(600, 100), Position = new Vector2f(100, 200), Color = Color.Black, Text = "This is an example of sfml-ui", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top });
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 30) { Size = new Vector2f(350, 200), Position = new Vector2f(50, 350), Color = Color.Black, Text = "This is an SFML program\nHello", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Top });
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 30) { Size = new Vector2f(300, 200), Position = new Vector2f(450, 350), Color = Color.Black, Text = "and its awesome :D", TextAlignment = Alignment.MiddleLeft, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top });
+			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 50) { Size = new Vector2f(800, 100), Color = Color.White, Text = "Hello World", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top, BackgroundColor = Colors.SteelBlue });
+			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 21) { Size = new Vector2f(600, 100), Position = new Vector2f(100, 150), Color = Color.Black, Text = "This is an example of sfml-ui, an ui library for SFML.Net", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top });
+			scene1.AddComponent(new PictureControl("example-100.png") { Size = new Vector2f(100, 100), Position = new Vector2f(0, 0), Anchor = AnchorPoints.Left | AnchorPoints.Top });
 
 			uimanager.CurrentScene = scene1;
 

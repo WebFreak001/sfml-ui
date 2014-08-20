@@ -54,6 +54,7 @@
     <Compile Include="AnchorPoints.cs" />
     <Compile Include="Align.cs" />
     <Compile Include="Colors.cs" />
+    <Compile Include="Controls\PictureControl.cs" />
     <Compile Include="Controls\TextControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scene.cs" />
