@@ -19,12 +19,17 @@ namespace sfml_ui.Tests
 		{
 			window = new RenderWindow(new VideoMode(800, 600), "sfml-ui Examples", Styles.Default);
 			window.Closed += window_OnCloseRequest;
+			window.Resized += window_Resized;
 
 			uimanager = new UISceneManager();
 			uimanager.Init(window);
 
 			scene1 = new Scene(ScrollInputs.None);
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf")) { Size = new Vector2f(300, 50), Color = Color.Black });
+			scene1.Size = new Vector2f(window.Size.X, window.Size.Y);
+			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 50) { Size = new Vector2f(800, 100), Color = Color.Black, Text = "Hello There.", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top | AnchorPoints.Bottom });
+			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 30) { Size = new Vector2f(600, 100), Position = new Vector2f(100, 200), Color = Color.Black, Text = "This is an example of sfml-ui", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Bottom });
+			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 30) { Size = new Vector2f(350, 200), Position = new Vector2f(50, 350), Color = Color.Black, Text = "This is an SFML program\nHello", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Bottom });
+			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 30) { Size = new Vector2f(300, 200), Position = new Vector2f(450, 350), Color = Color.Black, Text = "and its awesome :D", TextAlignment = Alignment.MiddleLeft, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Bottom });
 
 			uimanager.CurrentScene = scene1;
 
@@ -39,6 +44,12 @@ namespace sfml_ui.Tests
 			}
 		}
 
+		private void window_Resized(object sender, SizeEventArgs e)
+		{
+			View view = new View(new FloatRect(0, 0, window.Size.X, window.Size.Y));
+			window.SetView(view);
+		}
+
 		private void window_OnCloseRequest(object sender, EventArgs e)
 		{
 			window.Close();
@@ -46,6 +57,7 @@ namespace sfml_ui.Tests
 
 		public void Dispose()
 		{
+			window.Dispose();
 		}
 	}
 }

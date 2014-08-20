@@ -26,9 +26,15 @@ namespace sfml_ui.Controls
 
 		public uint TextSize { get; set; }
 
+		public AnchorPoints Anchor { get; set; }
+
 		public string Text { get { return textObject.DisplayedString; } set { textObject.DisplayedString = value; } }
 
 		public Color Color { get { return textObject.Color; } set { textObject.Color = value; } }
+
+		public Alignment TextAlignment { get; set; }
+
+		public FloatRect Padding { get; set; }
 
 		protected Text textObject;
 		protected RenderTexture renderContainer;
@@ -39,8 +45,13 @@ namespace sfml_ui.Controls
 		{
 			TextFont = font;
 			TextSize = size;
+			TextAlignment = Alignment.TopLeft;
+
 			Size = new Vector2f(50, 50);
-			textObject = new Text("", font, size);
+			Anchor = AnchorPoints.None;
+			Padding = new FloatRect(3, 3, 3, 3);
+
+			textObject = new Text("Set Text Property", font, size);
 			renderSprite = new Sprite();
 			renderContainer = new RenderTexture((uint)Size.X, (uint)Size.Y);
 		}
@@ -70,11 +81,35 @@ namespace sfml_ui.Controls
 		{
 		}
 
-		public void Render(RenderTarget target)
+		public void Render(RenderTarget target, Vector2f position)
 		{
-			renderContainer.Clear(Color.Transparent);
+			renderContainer.Clear(Color.Yellow);
+			Vector2f textPosition = new Vector2f(Padding.Left, Padding.Top);
+
+			if (TextAlignment.GetHorizontal() == 0)
+			{
+				textPosition.X = (renderContainer.Size.X - textObject.GetLocalBounds().Width) * 0.5f;
+			}
+			else if (TextAlignment.GetHorizontal() == 1)
+			{
+				textPosition.X = renderContainer.Size.X - textObject.GetLocalBounds().Width - Padding.Width;
+			}
+
+			if (TextAlignment.GetVertical() == 0)
+			{
+				textPosition.Y = (renderContainer.Size.Y - textObject.Font.GetLineSpacing(TextSize)) * 0.5f;
+			}
+			else if (TextAlignment.GetVertical() == 1)
+			{
+				textPosition.Y = renderContainer.Size.Y - textObject.Font.GetLineSpacing(TextSize) - Padding.Height;
+			}
+
+			textObject.Position = textPosition;
 			renderContainer.Draw(textObject);
 			renderSprite.Texture = renderContainer.Texture;
+			renderSprite.Position = position + new Vector2f(0, size.Y);
+			renderSprite.TextureRect = new IntRect(0, 0, (int)size.X, (int)size.Y);
+			renderSprite.Scale = new Vector2f(1, -1);
 			target.Draw(renderSprite);
 		}
 	}

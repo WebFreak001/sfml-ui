@@ -19,6 +19,8 @@ namespace sfml_ui
 
 		Vector2f Position { get; set; }
 
+		AnchorPoints Anchor { get; set; }
+
 		bool IsFocused { get; set; }
 
 		void HandleKeyDown(Keyboard.Key key, bool Ctrl, bool Shift, bool Alt, bool Windows);
@@ -31,6 +33,6 @@ namespace sfml_ui
 
 		void HandleMouseMove(Vector2i mousePosition);
 
-		void Render(RenderTarget target);
+		void Render(RenderTarget target, Vector2f position);
 	}
 }

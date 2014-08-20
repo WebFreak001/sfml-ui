@@ -26,6 +26,8 @@ namespace sfml_ui
 
 		public bool IsFocused { get; set; }
 
+		public AnchorPoints Anchor { get; set; }
+
 		public Scene(ScrollInputs scrollType)
 		{
 			Components = new List<UIComponent>();
@@ -43,10 +45,10 @@ namespace sfml_ui
 			Components.Add(component);
 		}
 
-		public void Render(RenderTarget target)
+		public void Render(RenderTarget target, Vector2f position)
 		{
 			foreach (UIComponent component in Components)
-				component.Render(target);
+				component.Render(target, position + component.Position);
 		}
 
 		public UIComponent GetTopMost(Vector2i position)
@@ -74,8 +76,32 @@ namespace sfml_ui
 			}
 		}
 
-		public void HandleResize()
+		public void HandleResize(Vector2i newSize)
 		{
+			foreach (UIComponent component in Components)
+			{
+				AnchorPoints anchor = component.Anchor;
+				FloatRect targetSize = new FloatRect(component.Position.X, component.Position.Y, component.Size.X, component.Size.Y);
+				if (!anchor.HasFlag(AnchorPoints.Left))
+				{
+					targetSize.Left += (newSize.X - Size.X);
+				}
+				if (anchor.HasFlag(AnchorPoints.Right) && anchor.HasFlag(AnchorPoints.Left))
+				{
+					targetSize.Width += (newSize.X - Size.X);
+				}
+				if (!anchor.HasFlag(AnchorPoints.Top))
+				{
+					targetSize.Top += (newSize.Y - Size.Y);
+				}
+				if (anchor.HasFlag(AnchorPoints.Bottom) && anchor.HasFlag(AnchorPoints.Top))
+				{
+					targetSize.Height += (newSize.Y - Size.Y);
+				}
+				component.Position = new Vector2f(targetSize.Left, targetSize.Top);
+				component.Size = new Vector2f(targetSize.Width, targetSize.Height);
+			}
+			Size = new Vector2f(newSize.X, newSize.Y);
 		}
 
 		public void HandleKeyDown(Keyboard.Key key, bool Ctrl, bool Shift, bool Alt, bool Windows)

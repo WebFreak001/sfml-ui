@@ -31,7 +31,7 @@ namespace sfml_ui
 
 		public void Render(RenderTarget target)
 		{
-			CurrentScene.Render(target);
+			CurrentScene.Render(target, new Vector2f());
 		}
 
 		private void window_HasGainedFocus(object sender, EventArgs e)
@@ -64,8 +64,7 @@ namespace sfml_ui
 
 		private void window_Resized(object sender, SizeEventArgs e)
 		{
-			if (handleInput)
-				CurrentScene.HandleResize();
+			CurrentScene.HandleResize(new Vector2i((int)e.Width, (int)e.Height));
 		}
 
 		private void window_KeyPressed(object sender, KeyEventArgs e)
