@@ -105,7 +105,7 @@ namespace sfml_ui
 		public void HandleMouseUp(Vector2i mousePosition, Mouse.Button button)
 		{
 			UIComponent target = GetTopMost(mousePosition);
-			if (target.IsFocusable && button == Mouse.Button.Left)
+			if (target != null && target.IsFocusable && button == Mouse.Button.Left)
 			{
 				UnfocusAll();
 				target.IsFocused = true;

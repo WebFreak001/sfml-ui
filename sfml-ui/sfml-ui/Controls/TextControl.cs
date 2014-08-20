@@ -28,6 +28,8 @@ namespace sfml_ui.Controls
 
 		public string Text { get { return textObject.DisplayedString; } set { textObject.DisplayedString = value; } }
 
+		public Color Color { get { return textObject.Color; } set { textObject.Color = value; } }
+
 		protected Text textObject;
 		protected RenderTexture renderContainer;
 		protected Sprite renderSprite;
@@ -37,7 +39,10 @@ namespace sfml_ui.Controls
 		{
 			TextFont = font;
 			TextSize = size;
+			Size = new Vector2f(50, 50);
+			textObject = new Text("", font, size);
 			renderSprite = new Sprite();
+			renderContainer = new RenderTexture((uint)Size.X, (uint)Size.Y);
 		}
 
 		public TextControl(Font font)

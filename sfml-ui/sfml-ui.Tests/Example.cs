@@ -24,7 +24,19 @@ namespace sfml_ui.Tests
 			uimanager.Init(window);
 
 			scene1 = new Scene(ScrollInputs.None);
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf")));
+			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf")) { Size = new Vector2f(300, 50), Color = Color.Black });
+
+			uimanager.CurrentScene = scene1;
+
+			while (window.IsOpen())
+			{
+				window.DispatchEvents();
+				window.Clear(Color.White);
+
+				uimanager.Render(window);
+
+				window.Display();
+			}
 		}
 
 		private void window_OnCloseRequest(object sender, EventArgs e)

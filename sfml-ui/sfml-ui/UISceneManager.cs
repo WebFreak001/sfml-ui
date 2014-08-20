@@ -1,4 +1,5 @@
-﻿using SFML.Window;
+﻿using SFML.Graphics;
+using SFML.Window;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace sfml_ui
 			window.KeyReleased += window_KeyReleased;
 
 			window.Resized += window_Resized;
+		}
+
+		public void Render(RenderTarget target)
+		{
+			CurrentScene.Render(target);
 		}
 
 		private void window_HasGainedFocus(object sender, EventArgs e)
