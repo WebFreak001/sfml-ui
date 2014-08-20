@@ -36,6 +36,8 @@ namespace sfml_ui.Controls
 
 		public FloatRect Padding { get; set; }
 
+		public Color BackgroundColor { get; set; }
+
 		protected Text textObject;
 		protected RenderTexture renderContainer;
 		protected Sprite renderSprite;
@@ -50,6 +52,7 @@ namespace sfml_ui.Controls
 			Size = new Vector2f(50, 50);
 			Anchor = AnchorPoints.None;
 			Padding = new FloatRect(3, 3, 3, 3);
+			BackgroundColor = Color.Transparent;
 
 			textObject = new Text("Set Text Property", font, size);
 			renderSprite = new Sprite();
@@ -83,7 +86,7 @@ namespace sfml_ui.Controls
 
 		public void Render(RenderTarget target, Vector2f position)
 		{
-			renderContainer.Clear(Color.Yellow);
+			renderContainer.Clear(BackgroundColor);
 			Vector2f textPosition = new Vector2f(Padding.Left, Padding.Top);
 
 			if (TextAlignment.GetHorizontal() == 0)
