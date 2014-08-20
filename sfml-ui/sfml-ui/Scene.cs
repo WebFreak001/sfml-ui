@@ -28,6 +28,11 @@ namespace sfml_ui
 
 		public AnchorPoints Anchor { get; set; }
 
+		/// <summary>
+		/// Not used in Scene
+		/// </summary>
+		public Color BackgroundColor { get; set; }
+
 		public Scene(ScrollInputs scrollType)
 		{
 			Components = new List<UIComponent>();

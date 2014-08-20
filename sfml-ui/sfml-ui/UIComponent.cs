@@ -23,6 +23,8 @@ namespace sfml_ui
 
 		bool IsFocused { get; set; }
 
+		Color BackgroundColor { get; set; }
+
 		void HandleKeyDown(Keyboard.Key key, bool Ctrl, bool Shift, bool Alt, bool Windows);
 
 		void HandleKeyUp(Keyboard.Key key, bool Ctrl, bool Shift, bool Alt, bool Windows);
