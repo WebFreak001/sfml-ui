@@ -16,7 +16,25 @@ namespace sfml_ui.Controls
 
 		public Vector2f MinSize { get; set; }
 
-		public Vector2f Size { get { return size; } set { size = value; renderContainer = new RenderTexture((uint)value.X, (uint)value.Y); } }
+		public Vector2f Size
+		{
+			get
+			{
+				return size;
+			}
+			set
+			{
+				size = value;
+				if (Size.X < 1 || Size.Y < 1)
+				{
+					renderContainer = new RenderTexture(1, 1);
+				}
+				else
+				{
+					renderContainer = new RenderTexture((uint)value.X, (uint)value.Y);
+				}
+			}
+		}
 
 		public Vector2f Position { get; set; }
 
