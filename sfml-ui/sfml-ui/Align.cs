@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace sfml_ui.Controls
+namespace sfml_ui
 {
 	public enum Alignment
 	{
