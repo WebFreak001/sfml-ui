@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="50"
+   height="50"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="logo.svg">
+  <defs
+     id="defs4">
+    <filter
+       id="filter4709"
+       inkscape:label="Drop Shadow"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         id="feFlood4711"
+         flood-opacity="0.6"
+         flood-color="rgb(0,0,0)"
+         result="flood" />
+      <feComposite
+         id="feComposite4713"
+         in2="SourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4715"
+         stdDeviation="0.4"
+         result="blur" />
+      <feOffset
+         id="feOffset4717"
+         dx="0"
+         dy="0.4"
+         result="offset" />
+      <feComposite
+         id="feComposite4719"
+         in2="offset"
+         in="SourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+    <filter
+       id="filter4727"
+       inkscape:label="Drop Shadow"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         id="feFlood4729"
+         flood-opacity="0.6"
+         flood-color="rgb(0,0,0)"
+         result="flood" />
+      <feComposite
+         in2="SourceGraphic"
+         id="feComposite4731"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4733"
+         stdDeviation="0.4"
+         result="blur" />
+      <feOffset
+         id="feOffset4735"
+         dx="0"
+         dy="0.4"
+         result="offset" />
+      <feComposite
+         in2="offset"
+         id="feComposite4737"
+         in="SourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6568543"
+     inkscape:cx="101.94081"
+     inkscape:cy="22.175791"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1002.3622)">
+    <g
+       inkscape:export-filename="D:\GitRepos\sfml-ui\sfml-ui\sfml-ui.Tests\bin\Debug\example-100.png"
+       inkscape:export-xdpi="347.58621"
+       inkscape:export-ydpi="347.58621"
+       id="g4721"
+       style="filter:url(#filter4727)"
+       transform="matrix(1.8968081,0,0,1.8968081,-631.36959,-93.339317)">
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path2985"
+         d="m 335.37065,581.94677 21.62262,0 -0.0366,2.1561 -2.31139,11.45814 -17.00604,0.0442 -2.12603,-11.51199 z"
+         style="fill:#88aa00;stroke:none" />
+      <rect
+         ry="3.8281246e-007"
+         y="595.29968"
+         x="337.90625"
+         height="4.6562128"
+         width="16.562519"
+         id="rect3775"
+         style="fill:#678200;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path3777"
+         d="m 337.90625,595.39343 0,4.625 -2.55946,-14.46479 0.0282,-3.59771 z"
+         style="fill:#7a9800;fill-opacity:1;stroke:none" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path3777-1"
+         d="m 354.47027,595.33093 0,4.625 2.55946,-14.46479 -0.0282,-3.59771 z"
+         style="fill:#516400;fill-opacity:1;stroke:none" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:28.88627625px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#dbdbdb;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="12.430315"
+       y="1032.1732"
+       id="text4741-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\GitRepos\sfml-ui\sfml-ui\sfml-ui.Tests\bin\Debug\example-100.png"
+       inkscape:export-xdpi="347.58621"
+       inkscape:export-ydpi="347.58621"><tspan
+         sodipodi:role="line"
+         id="tspan4743-7"
+         x="12.430315"
+         y="1032.1732">UI</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28.88627625px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Calibri;-inkscape-font-specification:Calibri"
+       x="12.465511"
+       y="1031.4193"
+       id="text4741"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="D:\GitRepos\sfml-ui\sfml-ui\sfml-ui.Tests\bin\Debug\example-100.png"
+       inkscape:export-xdpi="347.58621"
+       inkscape:export-ydpi="347.58621"><tspan
+         sodipodi:role="line"
+         id="tspan4743"
+         x="12.465511"
+         y="1031.4193">UI</tspan></text>
+  </g>
+</svg>

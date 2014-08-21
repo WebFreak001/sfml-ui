@@ -129,7 +129,7 @@ namespace sfml_ui
 		{
 			foreach (UIComponent component in Components)
 			{
-				component.HandleMouseDown(mousePosition, button);
+				component.HandleMouseDown(mousePosition - new Vector2i((int)Position.X, (int)Position.Y), button);
 			}
 		}
 
@@ -143,7 +143,7 @@ namespace sfml_ui
 			}
 			foreach (UIComponent component in Components)
 			{
-				component.HandleMouseUp(mousePosition, button);
+				component.HandleMouseUp(mousePosition - new Vector2i((int)Position.X, (int)Position.Y), button);
 			}
 		}
 
@@ -151,7 +151,7 @@ namespace sfml_ui
 		{
 			foreach (UIComponent component in Components)
 			{
-				component.HandleMouseMove(mousePosition);
+				component.HandleMouseMove(mousePosition - new Vector2i((int)Position.X, (int)Position.Y));
 			}
 		}
 	}

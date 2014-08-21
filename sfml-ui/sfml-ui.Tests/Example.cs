@@ -26,9 +26,10 @@ namespace sfml_ui.Tests
 
 			scene1 = new Scene(ScrollInputs.None);
 			scene1.Size = new Vector2f(window.Size.X, window.Size.Y);
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 50) { Size = new Vector2f(800, 100), Color = Color.White, Text = "Hello World", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top, BackgroundColor = Colors.SteelBlue });
-			scene1.AddComponent(new TextControl(new Font("C:/Windows/Fonts/arial.ttf"), 21) { Size = new Vector2f(600, 100), Position = new Vector2f(100, 150), Color = Color.Black, Text = "This is an example of sfml-ui, an ui library for SFML.Net", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top });
+			scene1.AddComponent(new TextControl(new Font("font.ttf"), 50) { Size = new Vector2f(800, 100), Color = Color.White, Text = "Hello World", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top, BackgroundColor = Colors.SteelBlue });
+			scene1.AddComponent(new TextControl(new Font("font.ttf"), 16) { Size = new Vector2f(600, 100), Position = new Vector2f(100, 150), Color = Color.Black, Text = "This is an example of sfml-ui, an ui library for SFML.Net", TextAlignment = Alignment.MiddleCenter, Anchor = AnchorPoints.Left | AnchorPoints.Right | AnchorPoints.Top });
 			scene1.AddComponent(new PictureControl("example-100.png") { Size = new Vector2f(100, 100), Position = new Vector2f(0, 0), Anchor = AnchorPoints.Left | AnchorPoints.Top });
+			scene1.AddComponent(new ButtonControl(new Font("font.ttf"), 16, "button.png", "button_hover.png", "button_pressed.png") { Size = new Vector2f(150, 49), Position = new Vector2f(50, 250), Anchor = AnchorPoints.Left | AnchorPoints.Top, Text = "Press Me :)" });
 
 			uimanager.CurrentScene = scene1;
 

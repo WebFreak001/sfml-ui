@@ -27,10 +27,12 @@ namespace sfml_ui.Controls
 				size = value;
 				if (Size.X < 1 || Size.Y < 1)
 				{
+					if (renderContainer != null) renderContainer.Dispose();
 					renderContainer = new RenderTexture(1, 1);
 				}
 				else
 				{
+					if (renderContainer != null) renderContainer.Dispose();
 					renderContainer = new RenderTexture((uint)value.X, (uint)value.Y);
 				}
 			}
@@ -55,6 +57,21 @@ namespace sfml_ui.Controls
 		public FloatRect Padding { get; set; }
 
 		public Color BackgroundColor { get; set; }
+
+		public bool Bold
+		{
+			get
+			{
+				return textObject.Style.HasFlag(SFML.Graphics.Text.Styles.Bold);
+			}
+			set
+			{
+				if (value)
+					textObject.Style = SFML.Graphics.Text.Styles.Bold;
+				else
+					textObject.Style = SFML.Graphics.Text.Styles.Regular;
+			}
+		}
 
 		protected Text textObject;
 		protected RenderTexture renderContainer;
@@ -118,11 +135,11 @@ namespace sfml_ui.Controls
 
 			if (TextAlignment.GetVertical() == 0)
 			{
-				textPosition.Y = (renderContainer.Size.Y - textObject.Font.GetLineSpacing(TextSize)) * 0.5f;
+				textPosition.Y = (renderContainer.Size.Y - textObject.Font.GetLineSpacing(TextSize) * 1.1f) * 0.5f;
 			}
 			else if (TextAlignment.GetVertical() == 1)
 			{
-				textPosition.Y = renderContainer.Size.Y - textObject.Font.GetLineSpacing(TextSize) - Padding.Height;
+				textPosition.Y = renderContainer.Size.Y - textObject.Font.GetLineSpacing(TextSize) * 1.1f - Padding.Height;
 			}
 
 			textObject.Position = textPosition;

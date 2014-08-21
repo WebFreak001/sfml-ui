@@ -12,7 +12,7 @@ namespace sfml_ui
 	{
 		public Scene CurrentScene { get; set; }
 
-		protected bool handleInput = false;
+		protected bool handleInput = true;
 
 		public void Init(Window window)
 		{
